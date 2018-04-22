@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<meta name="author" content="Sebastian Pérez Quintero">
+<meta name="keywords" content="estudiantes NextU, JavaScript, JSON">
+<meta name="description" content="Lista estudiantes materia JS de NEXTU">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Quicksand" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/estilos.css">
+
+<title>Evaluación Final - JS lo esencial</title>
+</head>
+
+<body id="entrada" onLoad="pageload()">
+	<div id="caja_sitio">
+        <header>
+        	<div id="logo_titulo">
+        		<picture id="logo">
+            	<source srcset="imagenes/logonu.svg">
+							<source srcset="imagenes/logonu.png">
+							<img src="imagenes/logonu.jpg" />
+            </picture>
+            <div id="titulopage">
+                <h1>Lista de los Estudiantes de NextU del curso JS</h1>
+            </div>
+          </div>
+        </header>
+        <div id="contenido">
+					<!-- Area del form para ingresar datos -->
+					<section id="aIngresarNotas">
+						<p style="text-align:center; color:rgb(10, 9, 34);">Ingresar los datos de los alumnos en el siguiente formulario</p>
+						<div id="formDatos">
+							<input type="text" id="codigoEst" placeholder="Código" />
+							<input type="text" id="nombreEst" placeholder="Nombre del Alumno" />
+							<input type="text" id="nota1Est" placeholder="Nota 1" />
+							<input type="text" id="nota2Est" placeholder="Nota 2" />
+							<button id="ingresarDatos">Ingresar Datos</button>
+						</div>
+						<br/>
+						<div style="height:80px; overflow:hidden;">
+							<span id="mensajeProceso"></span>
+						</div>
+					</section>
+					<!-- Fin Area del form para ingresar datos -->
+					<!-- Area de la Tabla -->
+          <div id="contenedor_tablas">
+         	 		<p id="anuncio_tabla"><strong>Navegando en mis notas...</strong><br>Arrastrar la tabla a los lados para ver todos los datos</p>
+              <section id="tablaestudiantes">
+                  <table id="mlest">
+                      <thead>
+                          <th>Código</th>
+                          <th>Nombre</th>
+                          <th>Nota 1</th>
+                          <th>Nota 2</th>
+                          <th>Prom</th>
+                      </thead>
+                      <tbody id="content_mlest">
+                      </tbody>
+                  </table>
+              </section>
+					</div>
+					<!-- Fin Area de la Tabla -->
+        </div>
+				<!-- Area de Informacion -->
+				<section id="promedio">
+					<h2>Información de interes</h2>
+					<button id="btnCalcularP" style="margin-left:auto; margin-right:auto;">Calcular Promedio</button>
+					<h3>Progresos...</h3>
+					<div id="contentMensajes">
+						<div id="mensajes">
+							<ul id="mensajes_aliento">
+										<li onClick="elmejor(estudiantes)">El mejor</li>
+										<li onClick="masesfuerzo(estudiantes)">Necesita más Esfuerzo</li>
+								</ul>
+								<p id="nohayDatos"></p>
+								<p id="elmejorestudiante">Queremos felicitar a: <br><span id="nombre_mejor"></span><br> Por su dedicación en la certificación </p>
+								<p id="masesfuerzo"><span id="nombre_malo"></span><span id="otro_nombremalo"></span><br>Es importante realizar un esfuerzo mayor <strong>¡Animo!</strong></p>
+						</div>
+						<!-- Area de los que van GANANDO y los que van PERDIENDO -->
+						<div id="lasnoticias">
+								<p>Realiza clic en los botones <strong>GANANDO</strong> y <strong>PERDIENDO</strong> para ver quiénes van Ganando la certificación y quienes estan en la cuerda floja...</p>
+								<p id="nohayDatosGP" style="width:100%; margin-bottom:10px;"></p>
+								<div id="ganadoresyperdedores">
+										<div id="ganadores">
+												<h4 onClick="lavanGanando(estudiantes)">GANANDO</h4>
+												<ul id="losganadores">
+
+												</ul>
+										</div>
+										<div id="perdedores">
+												<h4 onClick="lavanPerdiendo(estudiantes)">PERDIENDO</h4>
+												<ul id="losperdedores">
+
+												</ul>
+										</div>
+								</div>
+						</div>
+					</div>
+				</section>
+				<!-- Fin Area de Informacion -->
+    </div>
+    <footer>
+        <span>Design by Sebastian Pérez Quintero - CopyRight&copy;</span>
+    </footer>
+		<script type="text/javascript" src="js/javascript.js"></script>
+</body>
+</html>

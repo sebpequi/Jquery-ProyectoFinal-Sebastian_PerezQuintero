@@ -1,0 +1,552 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-color:#CCC;
+	font-family: 'Quicksand', sans-serif;
+	margin:0;
+	padding:0;
+}
+
+a, ul {
+	text-decoration:none;
+	list-style:none;
+}
+
+table, th, tr, td {
+	border-collapse:collapse;
+}
+
+#caja_sitio {
+	background-color:white;
+	min-height:500px;
+}
+
+/*** Animación Caja Sitio ***/
+@-webkit-keyframes entradacaja {
+	0% {
+		margin-top: -50%;
+	}
+	70% {
+		margin-top: 5%;
+	}
+	100% {
+		margin-top: 0%;
+	}
+}
+
+@-webkit-keyframes salidacaja {
+	0% {
+		margin-top: 0%;
+	}
+	70% {
+		margin-top: 5%;
+	}
+	100% {
+		margin-top: -50%;
+	}
+}
+
+@-webkit-keyframes salidamensaje {
+	0% {
+		margin-top: 0%;
+	}
+	70% {
+		margin-top: 5%;
+	}
+	100% {
+		margin-top: 100%;
+	}
+}
+/*** Area del Header ***/
+#logo_titulo {
+	width:100%;
+	margin: 0 auto 10px auto;
+}
+
+#logo svg {
+	width:100%;
+	height:60px;
+}
+
+#titulopage h1 {
+	margin:0;
+	padding:0;
+	text-align:center;
+	word-wrap:break-word;
+}
+
+/*** El Menu se diseño en los media queries ***/
+#mostrar_menu {
+	display:none;
+}
+
+/*** Area del contenido ***/
+#contenido {
+	width:98%;
+	margin:10px auto 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+/*** Section Form Ingresar Notas ***/
+#formDatos {
+	overflow: hidden;
+}
+
+input[type='text'] {
+ 	width:90%;
+	padding: 1% 10px;
+	margin-bottom:5px;
+}
+
+#ingresarDatos {
+	padding: 10px 15px 10px 15px;
+	border: none;
+	border-radius:10px;
+	color: white;
+	cursor:pointer;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+
+	background: -webkit-linear-gradient(top, #0045A6 , #03275A);
+	background: -o-linear-gradient(top, #0045A6 , #03275A);
+	background: -moz-linear-gradient(top, #0045A6 , #03275A);
+	background: linear-gradient(top, #0045A6 , #03275A);
+}
+
+#ingresarDatos:hover {
+	color: white;
+	cursor:pointer;
+
+	background: -webkit-linear-gradient(top, #a60210 , #5b0303);
+	background: -o-linear-gradient(top, #a60210 , #5b0303);
+	background: -moz-linear-gradient(top, #a60210 , #5b0303);
+	background: linear-gradient(top, #a60210 , #5b0303);
+}
+
+#mensajeProceso {
+	width:auto;
+	margin-top:10px;
+	background-color: white;
+	color:#e2000e;
+	padding:10px;
+	display:none;
+}
+
+
+/*** Las tablas de los datos ***/
+#contenedor_tablas {
+	margin-top:15px;
+}
+
+/*** Tabla lista de los estudiantes ***/
+#anuncio_tabla {
+	display:none;
+	text-align:center;
+	font-size:12px;
+}
+
+#tablaestudiantes {
+	width:95%;
+}
+
+#mlest thead th {
+	padding:10px 10px 5px 10px;
+	text-align:center;
+}
+
+#mlest thead th:first-child {
+	vertical-align:bottom;
+	background:none;
+}
+
+#mlest thead th:nth-child(2) {
+	vertical-align:bottom;
+	background:none;
+}
+
+#mlest thead th:nth-child(3) {
+	background:#21334d;
+	border-radius:10px 10px 0 0;
+	color:white;
+	font-size:13px;
+}
+#mlest thead th:nth-child(4) {
+	background:#b0dc00;
+	border-radius:10px 10px 0 0;
+	font-size:13px;
+}
+
+#mlest thead th:last-child {
+	background:#d27000;
+	border-radius:10px 10px 0 0;
+	font-size:13px;
+	color:white;
+}
+
+#mlest #content_mlest tr td {
+	padding:10px 10px 5px 10px;
+	text-align:center;
+}
+
+#mlest #content_mlest tr td:first-child {
+	border: solid 1px black;
+}
+
+#mlest #content_mlest tr td:nth-child(2) {
+	border: solid 1px black;
+}
+
+#mlest #content_mlest tr td:nth-child(3) {
+	background:rgba(33, 51, 77, 0.3);
+}
+#mlest #content_mlest tr td:nth-child(4) {
+	background:rgba(176, 220, 0, 0.3);
+}
+
+#mlest #content_mlest tr td:last-child {
+	background:rgba(210, 112, 0, 0.3);
+}
+
+/*** Tabla del promedio ***/
+#promedio {
+	background:#f2f2f2;
+}
+
+#promedio h2 {
+	text-align:center;
+	color:#113048;
+	margin:0;
+	padding:0;
+}
+
+#promedio h3 {
+	text-align:center;
+	color:#113048;
+
+}
+
+#promedio h4 {
+	text-align:center;
+	color:#113048;
+	font-size:14px;
+}
+
+#elpromedio {
+	font-weight:900;
+}
+
+#btnCalcularP {
+	margin-top:10px;
+	border: solid 1px #f2f2f2;
+	border-radius:10px;
+	color: white;
+	cursor:pointer;
+	width:auto;
+	display:block;
+	padding:10px 15px 10px 15px;
+
+	background: -webkit-linear-gradient(top, #0045A6 , #03275A);
+	background: -o-linear-gradient(top, #0045A6 , #03275A);
+	background: -moz-linear-gradient(top, #0045A6 , #03275A);
+	background: linear-gradient(top, #0045A6 , #03275A);
+}
+
+#btnCalcularP:hover, #mensajes_aliento > li:hover, #ganadores > h4:hover, #perdedores > h4:hover {
+	background: -webkit-linear-gradient(top, #02a603 , #035b04);
+	background: -o-linear-gradient(top, #02a603 , #035b04);
+	background: -moz-linear-gradient(top, #02a603 , #035b04);
+	background: linear-gradient(top, #02a603 , #035b04);
+}
+
+/*** Area de los Mensajes ***/
+#mensajes_aliento {
+	display:flex;
+	flex-direction:row;
+	padding:0;
+	margin:0;
+}
+
+#mensajes_aliento li {
+	padding:10px 0 10px 0;
+	text-align:center;
+	background:#253458;
+	border-radius:15px;
+	font-size:0.8rem;
+	color:white;
+	cursor:pointer;
+}
+
+#mensajes_aliento li:first-child {
+	width:33%;
+	margin-right:2%;
+}
+
+#mensajes_aliento li:last-child {
+	width:65%;
+}
+
+#mensajes p {
+	font-size:20px;
+	text-align:center;
+	font-family: 'Dancing Script', cursive;
+}
+#nombre_mejor, #nombre_malo {
+	font-size:18px;
+	font-family: 'Quicksand', sans-serif;
+	font-weight:900;
+}
+
+/*** Mostrar los mensajes de buen estudiante y estudiante regular ***/
+#elmejorestudiante {
+	display:none;
+}
+
+#masesfuerzo {
+	display:none;
+}
+
+/*** Mostrar las personas que van Ganando y los que van perdiendo ***/
+#lasnoticias h4 {
+	text-align:center;
+	color:#fff;
+	font-size:14px;
+	margin:2px 0 2px 0;
+	padding: 10px 0 10px 0;
+	background:rgba(102,102,102,0.5);
+	border-radius: 15px 15px 0 0;
+	cursor:pointer;
+}
+
+#lasnoticias p:first-child {
+	margin-top:0px;
+}
+
+#lasnoticias p {
+	text-align:justify;
+	color:#113048;
+}
+
+#ganadoresyperdedores {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+}
+
+#ganadores {
+	width:45%;
+	padding:5px 2% 5px 2%;
+	margin-right:1%;
+	background:#f2f2f2;
+	border-radius:15px;
+}
+
+#losganadores {
+	margin:10px 0 10px 0;
+	padding:5px 2px 5px 3px;
+	text-align:center;
+}
+
+#losganadores li {
+	text-align:left;
+}
+
+#losganadores li::before {
+	content: url(imagenes/bullet.png);
+	margin-right:10px;
+}
+
+#perdedores  {
+	width:45%;
+	padding:5px 2% 5px 2%;
+	margin-lft:1%;
+	background:#f2f2f2;
+	border-radius:15px;
+}
+
+#losperdedores {
+	margin:10px 0 10px 0;
+	padding:5px 2px 5px 3px;
+	text-align:center;
+}
+
+#losperdedores li {
+	text-align:left;
+}
+
+#losperdedores li::before {
+	content: url(imagenes/vamal.png);
+	margin-right:10px;
+	text-align:left;
+}
+
+}
+
+/*** Footer ***/
+footer {
+	width:100%;
+}
+
+footer span {
+	display:block;
+	text-align:center;
+	font-size:14px;
+	color:#999;
+}
+
+
+/*************************************************************
+Diseño web Responsive
+*************************************************************/
+/*****************************************Laptops y computers************/
+@media screen and (min-width:700px) {
+#caja_sitio {
+	width:100%;
+	max-width:700px;
+	padding: 10px 15px 20px 15px;
+	margin: 10px auto 15px auto;
+	border-radius: 10px;
+	filter: drop-shadow(3px 3px 3px gray);
+}
+
+/*** Area del Header ***/
+#logo_titulo {
+	display:flex;
+	flex-direction:row;
+}
+
+#logo {
+	width:30%;
+}
+
+#titulopage {
+	width:65%;
+	padding-left:5%;
+}
+
+/*** El contenedor del contenido ***/
+#contenido{
+	display:flex;
+	flex-direction:row;
+}
+
+/*** Section Form Ingresar Notas ***/
+#aIngresarNotas {
+	width:46%;
+	padding:20px 1% 20px 1%;
+}
+
+/*** Las tablas de los datos ***/
+#contenedor_tablas {
+	width:52%;
+	border-left:1px dotted rgb(10, 9, 34);
+}
+
+/*** Tabla lista de los estudiantes ***/
+#tablaestudiantes {
+
+}
+
+/*** Area de los mensajes ***/
+#promedio {
+	width:98%;
+	min-height:350px;
+	padding:20px 1% 20px 1%;
+}
+
+#contentMensajes {
+	display:flex;
+	flex-direction:row;
+}
+
+#mensajes {
+	width:48%;
+	padding:5px 1% 10px 1%;
+}
+
+#lasnoticias {
+	width:48%;
+	padding:5px 1% 10px 1%;
+}
+
+}
+
+/************************************************ Dispositivos moviles ************/
+@media screen and (max-width:699px) {
+#caja_sitio {
+	width:98%;
+	padding: 10px 1% 20px 1%;
+	margin-bottom:15px;
+	border-radius: 0 0 10px 10px;
+}
+
+/*** Area del Header mostrada como una columna ***/
+#logo_titulo {
+	display:flex;
+	flex-direction: column;
+}
+
+#logo {
+	width:30%;
+	min-width:180px;
+	margin:0 auto 10px auto;
+}
+
+#titulopage {
+	width:90%;
+	padding:0 5% 0 5%;
+	font-size:0.7rem;
+}
+
+/*** El contenedor del contenido ***/
+#contenido {
+	display:flex;
+	flex-direction:column;
+}
+
+/*** El area del formulario ***/
+#aingresarNotas {
+	width:100%;
+	margin-bottom:15px;
+}
+/*** Las tablas de los datos ***/
+#contenedor_tablas {
+	width:100%;
+	margin-bottom:15px;
+}
+
+#anuncio_tabla {
+	display:block;
+}
+
+/*** Tabla lista de los estudiantes ***/
+#tablaestudiantes {
+	overflow-x:auto;
+}
+
+#mlest {
+	margin:0 auto 0 auto;
+}
+
+/*** Area de los mensajes ***/
+#promedio {
+	width:90%;
+	padding:5%;
+}
+
+#contentMensajes {
+	display:flex;
+	flex-direction:column;
+}
+
+#mensajes {
+	width:98%;
+	padding:5px 1% 10px 1%;
+}
+
+#lasnoticias {
+	width:98%;
+	padding:5px 1% 10px 1%;
+}
+
+}

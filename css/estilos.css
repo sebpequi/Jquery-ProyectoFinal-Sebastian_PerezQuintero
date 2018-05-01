@@ -427,19 +427,19 @@ Diseño web Responsive
 /*** El contenedor del contenido ***/
 #contenido{
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 }
 
 /*** Section Form Ingresar Notas ***/
 #aIngresarNotas {
-	width:46%;
-	padding:20px 1% 20px 1%;
+	width:96%;
+	padding:20px 2% 20px 2%;
 }
 
 /*** Las tablas de los datos ***/
 #contenedor_tablas {
-	width:52%;
-	border-left:1px dotted rgb(10, 9, 34);
+	width:96%;
+	padding:20px 2% 20px 2%;
 }
 
 /*** Tabla lista de los estudiantes ***/

@@ -21,15 +21,12 @@ var estudiantes = [];
 			for(var ls = cantidadLS; ls > 0; ls--){
 				localStorage.removeItem(ls);
 			};
-			console.log("ya limpie el LS");
 		}
-		console.log(localStorage);
 	};
 
 
 	//Vamos a crear la función para editar los datos de los estudiantes
 	function editarNota(id){
-		console.log("el id es " + id);
 		var datosEstudiante;
 		for(var i = 0; i<localStorage.length;i++){
 			var clave = localStorage.key(i);
@@ -62,6 +59,12 @@ var estudiantes = [];
 					$("#content_mlest").html(imprLista);
 				};
 		};
+		//Cuando se elimina el ultimo elemento hay que eliminar también los datos del html
+		if(localStorage.length == 0){
+			$("tbody tr:first-child").remove();
+		};
+		$("#codigoEst").val(localStorage.length+1);
+		$("#nombreEst").focus();
 	}
 
 //Inicio del código jQuery
@@ -97,7 +100,7 @@ function verificarLocalStorage(){
 					+"<td>" + "<button class='editar' id='"+estudiante.elCodigo+"' onclick='editarNota("+estudiante.elCodigo+")'>editar</button>" + "</td>"+"<td>" + "<button class='eliminar' id='"+estudiante.elCodigo+"' onclick='eliminarNota("+estudiante.elCodigo+")'>eliminar</button>" + "</td>"+"</tr>";
 					$("#content_mlest").html(imprLista);
 					//volvemos a ingresar los datos en el arreglo de estudiantes
-					estudiantes.push({"codigo":Number(estudiante.elCodigo), "nombre":estudiante.elNombre, "nota1":Number(estudiante.laNota1), "nota2":Number(estudiante.laNota2), "promedio":0});
+					estudiantes.push({"codigo":Number(estudiante.elCodigo), "nombre":estudiante.elNombre, "nota1":Number(estudiante.laNota1), "nota2":Number(estudiante.laNota2), "promedio":promedio});
 				};
 		};
 	};
@@ -205,6 +208,13 @@ function manejoDatos(){
 	mostrar_Lista(estudiantes);
 	$("#codigoEst").val(localStorage.length+1);
 	$("#nombreEst").focus();
+	/**
+	 *Como es muy probable que al ingresar nuevos alumnos los mejores,
+	 *peores y demás cambien entonces lo que se hace es borrarlos para
+	 *que sean nuevamente calculados
+	 */
+	$("#losganadores li").remove();
+	$("#losperdedores li").remove();
 };
 	//Codigo para mostrar los mensajes del estado del proceso.
 	function elMensaje(elmensaje){
@@ -250,31 +260,25 @@ function promedioIndividual(){
 $("#btnCalcularP").on("click", activarPromedio);
 	function activarPromedio(){
 		mostrar_promedio(estudiantes);
-	}
+	};
 	function mostrar_promedio(json) {
-		console.log(json.length);
 		if(json.length > 1){
 			var e;
 				suma = 0;
 
 			$.each(json, function(e, value){
 				suma += json[e].nota1 + json[e].nota2;
-			})
-			/*
-			for (e = 0; e < json.length; e++) {
-				suma += json[e].nota1 + json[e].nota2;
-			}
-			*/
+			});
+
 			promedio = suma/(json.length*2);
 			alert("El promedio de nota entre los estudiantes es de: " + promedio.toFixed(2));
 		}else{
 			alert("No hay estudiantes suficientes aun para sacar un promedio")
-		}
-	}
+		};
+	};
 //Declaramos la función para hallar al mejor estudiante y felicitarlo
 $("#elMejorE").click(elmejor);
  function elmejor(){
-	console.log(estudiantes);
 		if(estudiantes.length > 1){
 			mejornota = 0;
 			index = 0;
@@ -282,15 +286,15 @@ $("#elMejorE").click(elmejor);
 				if (mejornota < estudiantes[c].promedio) {
 					mejornota = estudiantes[c].promedio;
 					index=c;
-				}
+				};
 				$("#nombre_mejor").html(estudiantes[index].nombre+" que logro una nota promedio de "+mejornota);
 				$("#nohayDatos").html("");
 				$("#elmejorestudiante").css("display" , "block");
 				$("#masesfuerzo").css("display" , "none");
-			}
+			};
 		}else {
 			$("#nohayDatos").html("No hay estudiantes suficientes aun");
-		}
+		};
 	};
 //Declaramos la función para hallar al que necesita de más esfuerzo.
 $("#necesitaMasE").click(masesfuerzo);

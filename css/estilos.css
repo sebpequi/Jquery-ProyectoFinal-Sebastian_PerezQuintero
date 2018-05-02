@@ -92,12 +92,6 @@ table, th, tr, td {
 	overflow: hidden;
 }
 
-input[type='text'] {
- 	width:90%;
-	padding: 1% 10px;
-	margin-bottom:5px;
-}
-
 #ingresarDatos {
 	padding: 10px 15px 10px 15px;
 	border: none;
@@ -136,7 +130,7 @@ input[type='text'] {
 
 /*** Las tablas de los datos ***/
 #contenedor_tablas {
-	margin-top:15px;
+	margin-top:0px;
 }
 
 /*** Tabla lista de los estudiantes ***/
@@ -164,21 +158,35 @@ input[type='text'] {
 	vertical-align:bottom;
 	background:none;
 }
-
+/*** Cabecera azul ***/
 #mlest thead th:nth-child(3) {
 	background:#21334d;
 	border-radius:10px 10px 0 0;
 	color:white;
 	font-size:13px;
 }
+/*** Cabecera verde ***/
 #mlest thead th:nth-child(4) {
 	background:#b0dc00;
 	border-radius:10px 10px 0 0;
 	font-size:13px;
 }
-
-#mlest thead th:last-child {
+/*** Cabecera naranja ***/
+#mlest thead th:nth-child(5) {
 	background:#d27000;
+	border-radius:10px 10px 0 0;
+	color:white;
+	font-size:13px;
+}
+/*** Cabecera amarilla ***/
+#mlest thead th:nth-child(6) {
+	background:#e2e005;
+	border-radius:10px 10px 0 0;
+	font-size:13px;
+}
+/*** ultima cabecera roja ***/
+#mlest thead th:last-child {
+	background:#d20400;
 	border-radius:10px 10px 0 0;
 	font-size:13px;
 	color:white;
@@ -196,16 +204,25 @@ input[type='text'] {
 #mlest #content_mlest tr td:nth-child(2) {
 	border: solid 1px black;
 }
-
+/*** Columna azul ***/
 #mlest #content_mlest tr td:nth-child(3) {
 	background:rgba(33, 51, 77, 0.3);
 }
+/*** Columna verde ***/
 #mlest #content_mlest tr td:nth-child(4) {
 	background:rgba(176, 220, 0, 0.3);
 }
-
-#mlest #content_mlest tr td:last-child {
+/*** Columna naranja ***/
+#mlest #content_mlest tr td:nth-child(5) {
 	background:rgba(210, 112, 0, 0.3);
+}
+/*** Columna amarilla ***/
+#mlest #content_mlest tr td:nth-child(6) {
+	background:rgba(210, 206, 0, 0.47);
+}
+/*** Columna roja, botones eliminar ***/
+#mlest #content_mlest tr td:last-child {
+	background:rgba(226, 24, 7, 0.42);
 }
 
 /*** Tabla del promedio ***/
@@ -431,9 +448,15 @@ Diseño web Responsive
 }
 
 /*** Section Form Ingresar Notas ***/
+input[type='text'] {
+ 	width:23%;
+	padding: 5px 0.5%;
+	margin-bottom:5px;
+}
+
 #aIngresarNotas {
 	width:96%;
-	padding:20px 2% 20px 2%;
+	padding:20px 2% 0px 2%;
 }
 
 /*** Las tablas de los datos ***/
@@ -505,6 +528,12 @@ Diseño web Responsive
 }
 
 /*** El area del formulario ***/
+input[type='text'] {
+ 	width:90%;
+	padding: 10px 1%;
+	margin-bottom:5px;
+}
+
 #aingresarNotas {
 	width:100%;
 	margin-bottom:15px;
